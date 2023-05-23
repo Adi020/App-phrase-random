@@ -1,0 +1,49 @@
+.quoteBox__btn {
+    display: block;
+    margin: 0 auto;
+    padding: 5px 8px;
+    border-radius: 100%;
+    width: 13%;
+    height: 11%;
+    margin-top: 15px;
+    box-sizing: content-box 100px;   
+    font-size: 2.5rem;
+    color: rgb(92, 50, 133);
+    justify-content: center;
+    align-items: center;
+}
+
+.quoteBox {
+    border-radius: 15%;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    color:rgb(87, 54, 117);
+    font-family: 'Creepster', cursive;
+}
+
+.bgColor {
+    background: linear-gradient(
+        180deg,
+        rgba(247, 247, 247, 1) 12%,
+        rgba(255, 255, 255, 0.2) 84%
+      );
+      background-blend-mode: normal;
+      padding: 5% 10%;
+      height: 80%;
+      box-sizing: content-box 100px;
+
+}
+
+.quoteContainer {
+    display: flex;
+    margin: 0 auto;
+    padding: 50px 10px 10px;
+    height: 45%;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+
+}
+
