@@ -11,6 +11,7 @@
     color: rgb(92, 50, 133);
     justify-content: center;
     align-items: center;
+    word-wrap: break-word;
 }
 
 .quoteBox {
