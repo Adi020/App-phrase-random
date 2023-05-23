@@ -14,12 +14,14 @@
 }
 
 .quoteBox {
+    min-height:max-content;
     border-radius: 15%;
     justify-content: center;
     align-items: center;
     display: grid;
     color:rgb(87, 54, 117);
     font-family: 'Creepster', cursive;
+    overflow: hidden;
 }
 
 .bgColor {
