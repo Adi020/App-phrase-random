@@ -1,7 +1,7 @@
 .quoteBox__btn {
     display: block;
     margin: 0 auto;
-    padding: 5px 8px;
+    padding: 5px auto;
     border-radius: 100%;
     width: 13%;
     height: 11%;
