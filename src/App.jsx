@@ -3,6 +3,7 @@ import './App.css'
 import dbQuotes from "./db/quote.json"
 import { getRandom } from './utils/random'
 import QuoteBox from './components/QuoteBox'
+import Footer from './components/Footer'
 
 const spaceImages = ["space1", "space2", "space3", "space4"]
 
@@ -22,8 +23,7 @@ function App() {
     <QuoteBox handleChangeQuote={handleChangeQuote} phrase={quote.phrase}/>
     
     <footer>
-      <h3>Author: {quote.author}</h3>
-    </footer>
+   <Footer author={quote.author} />
     </section>
 
   </main>
