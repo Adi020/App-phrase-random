@@ -22,7 +22,6 @@ function App() {
 
     <QuoteBox handleChangeQuote={handleChangeQuote} phrase={quote.phrase}/>
     
-    <footer>
    <Footer author={quote.author} />
     </section>
 
