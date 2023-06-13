@@ -1,32 +1,106 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
-import dbQuotes from "./db/quote.json"
-import { getRandom } from './utils/random'
-import QuoteBox from './components/QuoteBox'
-import Footer from './components/Footer'
+import ModalForm from './assets/components/ModalForm'
+import Header from './assets/components/header'
+import axios from 'axios'
+import UserList from './assets/components/UserList'
 
-const spaceImages = ["space1", "space2", "space3", "space4"]
+const BASE_URL = "https://users-crud.academlo.tech"
+
+const DEFAULT_VALUES = {
+  birthday: "",
+  first_name: "",
+  last_name: "",
+  email: "",
+  password: ""
+}
 
 function App() {
-  const [quote, setQuote] = useState(getRandom(dbQuotes))
-  const [spaceImage, setSpaceImage] = useState(getRandom(spaceImages))
+  const [isUserToUpdate, setIsUserToUpdate] = useState(null)
+  const [isShowModal, setIsShowModal] = useState(false);
+  const [users, setUsers] = useState([]);
 
-  const handleChangeQuote = () => {
-    setQuote(getRandom(dbQuotes))
-    setSpaceImage(getRandom(spaceImages))
+  const changeShowModal = () => setIsShowModal(!isShowModal);
+  
+  const getAllUsers = () => {
+    const url = BASE_URL + "/users/";
+
+    axios
+    .get(url)
+    .then(({ data }) => setUsers(data))
+    .catch((err) => console.log(err));
+  }
+  useEffect(() => {
+    
+  getAllUsers();
+
+  }, [])
+  
+  console.log(users)
+
+  const createUser = (data, reset) => {
+    const url = BASE_URL + "/users/";
+
+    axios
+    .post(url, data)
+    .then(({ data }) => {
+      getAllUsers()
+      resetModalForm(reset)
+    })
+    .catch((err) => console.log(err));
   }
 
-  return <main className={`app ${spaceImage}`}>
-    <section className='app__container'>
-   <h1 className='size'>INFOGALAX</h1>
+  const deleteUser = (id) => {
+    const url = BASE_URL + `/users/${id}/`;
 
-    <QuoteBox handleChangeQuote={handleChangeQuote} phrase={quote.phrase}/>
-    
-   <Footer author={quote.author} />
-    </section>
+    axios
+    .delete(url)
+    .then(() => getAllUsers())
+    .catch((err) => console.log(err));
+  }
 
-  </main>
-  
+  const updateUser = (data, reset) => {
+    const url = BASE_URL + `/users/${isUserToUpdate.id}/`;
+
+    axios
+    .patch(url, data)
+    .then(() => {
+      getAllUsers()
+      resetModalForm(reset)
+    })
+    .catch((err) => console.log(err));
+  }
+
+  const resetModalForm = (reset) => {
+    setIsShowModal(false)
+    reset(DEFAULT_VALUES)
+    setIsUserToUpdate(null)
+  }
+
+  return (
+    <>
+    <main className='font-["Roboto"]'>
+      
+    <Header changeShowModal={changeShowModal} />
+
+    <ModalForm 
+    isShowModal={isShowModal} 
+    createUser={createUser}
+    isUserToUpdate={isUserToUpdate}
+    updateUser={updateUser}
+    resetModalForm={resetModalForm}
+    />
+
+   <UserList 
+   users={users} 
+   deleteUser={deleteUser} 
+   changeShowModal={changeShowModal} 
+   setIsUserToUpdate={setIsUserToUpdate}
+   />
+
+    </main>
+    </>
+  )
 }
 
 export default App

@@ -1,54 +1,9 @@
-html {
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
-body {
-  margin: 0;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-*,
-*::after,
-*::before {
-  box-sizing: inherit;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-}
-
-h1 {
-  font-family: 'Creepster', cursive;
-  color: rgba(240, 248, 255, 0.699);
-  text-shadow: 4px 3px 5px rgba(102,78,143,0.92);
-}
-
-p, 
-h1 {
-  font-size: xx-large;
-  text-align: center;
-}
-
-h1 {
-  padding-top: 10px;
-}
-
-h3 {
-  color: rgba(240, 248, 255, 0.836);
-  text-align: center;
-  
-}
-
-
-.size {
-  font-size: 50px;
-  -webkit-text-stroke: 1px rgb(0, 0, 0);
-  
-}
-
-
-
+.btn-primary {
+      @apply bg-primary text-white p-2
+    }
