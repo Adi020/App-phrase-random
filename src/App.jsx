@@ -18,13 +18,17 @@ function App() {
 
   return (
     <main
-      className={`${bgRoute} px-7 bg-cover min-h-screen flex justify-center items-center flex-col max-[640px]:gap-16 gap-28`}
+      className={`${bgRoute} px-7 bg-cover min-h-screen flex justify-center flex-col max-[640px]:gap-16 gap-28`}
     >
-      <h1 className="drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]  font-outline text-[#f0f8ffae] text-[50px]">
+
+<div clasName="">
+<h1 className="drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]  font-outline text-[#f0f8ffae] text-[50px]">
         INFOGALAX
       </h1>
 
       <QuoteBox handleChangeQuote={handleChangeQuote} phrase={quote.phrase} />
+</div>
+      
       <Footer author={quote.author} />
 
     </main>
