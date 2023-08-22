@@ -32,3 +32,13 @@ p {
 .space4 {
   background-image: url(../public/Images/space4.webp)
 }
+
+scroll-container {
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
