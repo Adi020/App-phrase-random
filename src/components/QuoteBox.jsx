@@ -1,7 +1,7 @@
 const QuoteBox = ({ phrase, handleChangeQuote }) => {
   return (
     <>
-      <article className="text-4xl h-[100%] overflow-y-scroll max-[640px]: max-h-[350px] text-[#573675] rounded-[50px] text-center flex justify-center items-center max-w-[600px] min-h-[350px] bg-gradient-to-b from-[#b7b7d2] px-10" style={{scrollbarWidth: "none"}}>
+      <article className="text-4xl h-[100%] overflow-y-scroll max-[640px]: max-h-[350px] text-[#573675] rounded-[50px] text-center flex justify-center items-center max-w-[600px] min-h-[350px] bg-gradient-to-b from-[#b7b7d2] p-10" style={{scrollbarWidth: "none"}}>
 <style>
         {`
           ::-webkit-scrollbar {
