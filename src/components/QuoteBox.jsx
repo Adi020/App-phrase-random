@@ -1,7 +1,7 @@
 const QuoteBox = ({ phrase, handleChangeQuote }) => {
   return (
     <div className="flex flex-col items-center gap-16 pb-8">
-      <article className="scroll-container text-4xl overflow-y-scroll max-h-[400px] text-[#573675] rounded-[50px] text-center flex justify-center items-center max-w-[600px] bg-gradient-to-b from-[#b7b7d2] p-10" >
+      <article className="scroll-container text-4xl overflow-y-scroll h-[400px] text-[#573675] rounded-[50px] text-center flex justify-center items-center max-w-[600px] bg-gradient-to-b from-[#b7b7d2] p-10" >
         <p className="leading-[45px] text-4xl font-bold">{phrase}</p>
       </article>
 
