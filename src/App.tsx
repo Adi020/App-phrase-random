@@ -27,7 +27,7 @@ function App() {
 
   return (
     <main
-      className={`${bgImage} p-2 bg-cover min-h-screen flex flex-col justify-between items-center`}
+      className={`${bgImage} p-2 bg-cover min-h-screen overflow-hidden flex flex-col justify-between items-center`}
     >
       <Header />
 
