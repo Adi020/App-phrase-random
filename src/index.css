@@ -24,19 +24,19 @@ p {
 }
 
 .space1 {
-  background-image: url(../public/Images/space1.jpg);
+  background-image: url(../public/images/space1.jpg);
 }
 
 .space2 {
-  background-image: url(../public/Images/space2.jpg);
+  background-image: url(../public/images/space2.jpg);
 }
 
 .space3 {
-  background-image: url(../public/Images/space3.webp);
+  background-image: url(../public/images/space3.webp);
 }
 
 .space4 {
-  background-image: url(../public/Images/space4.webp);
+  background-image: url(../public/images/space4.webp);
 }
 
 .scroll-container {
